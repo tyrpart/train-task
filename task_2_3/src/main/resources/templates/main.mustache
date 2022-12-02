@@ -1,0 +1,52 @@
+<html>
+
+<body>
+        <div>Для начала работы добавьте книги в БД</div>
+    <div>
+        <form method="post">
+            <input type="text" name="title" placeholder="Название" />
+            <input type="text" name="author" placeholder="Автор">
+            <button type="submit">Добавить</button>
+        </form>
+    </div>
+    <div>Список сообщений</div>
+    <form method="post" action="filter">
+        <input type="text" name="filter">
+        <button type="submit">Найти по авторам</button>
+    </form>
+
+    <form method="post" action="filterAuthor">
+        <input type="text" name="filterAuthor">
+        <button type="submit">Найти по названию</button>
+    </form>
+
+    <form method="post" action="filterId">
+         <input type="text" name="firstId" placeholder="Начало" />
+          <input type="text" name="secondId" placeholder="Конец">
+          <button type="submit">Найти по Id</button>
+    </form>
+
+    <form method="post" action="distinctAuthor">
+        <button type="submit">Найти уникальные</button>
+                                        </form>
+
+    {{#books}}
+        <div>
+            b>{{id}}</b>
+            <span>{{title}}</span>
+            <i>{{author}}</i>
+        </div>
+    {{/books}}
+
+    {{#booksTwo}}
+        <div>
+            <i>{{author}}</i>
+        </div>
+    {{/booksTwo}}
+
+
+
+
+
+</body>
+</html>
