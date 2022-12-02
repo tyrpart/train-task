@@ -55,7 +55,7 @@ public class Controller {
         Iterable<Book> books;
 
         if (filter != null && !filter.isEmpty()) {
-            books = bookRepo.findByAuthorContaining(filter);
+            books = bookRepo.findByAuthorContainingIgnoreCase(filter);
         } else {
             books = bookRepo.findAll();
         }
@@ -69,7 +69,7 @@ public class Controller {
         Iterable<Book> books;
 
         if (filterAuthor != null && !filterAuthor.isEmpty()) {
-            books = bookRepo.findByTitleContaining(filterAuthor);
+            books = bookRepo.findByTitleContainingIgnoreCase(filterAuthor);
         } else {
             books = bookRepo.findAll();
         }
